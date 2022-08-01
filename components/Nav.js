@@ -328,7 +328,7 @@ const Nav = () => {
 								</a>
 							) : (
 								<Link href="/market">
-									<a>{localeLn('Market')}</a>
+									<a>Pasar</a>
 								</Link>
 							)}
 							{router.pathname.includes('/market') && navActive()}
