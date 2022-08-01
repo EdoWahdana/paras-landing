@@ -16,7 +16,7 @@ export default function Home() {
 	return (
 		<div className="min-h-screen relative bg-black">
 			<Head>
-				<title>{localeLn('Paras - NFT Marketplace for Digital Collectibles on NEAR')}</title>
+				<title>{localeLn('Paras FORK - NFT Marketplace for Digital Collectibles on NEAR')}</title>
 				<meta
 					name="description"
 					content="Create, Trade, and Collect Digital Collectibles. All-in-one social NFT marketplace for creators and collectors. Discover the best and latest NFT collectibles on NEAR."
