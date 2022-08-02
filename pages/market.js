@@ -148,7 +148,7 @@ const MarketPage = ({ serverQuery }) => {
 				}}
 			></div>
 			<Head>
-				<title>{localeLn('MarketParas')}</title>
+				<title>{'Pasar Paras'}</title>
 				<meta
 					name="description"
 					content="Create, Trade, and Collect Digital Collectibles. All-in-one social NFT marketplace for creators and collectors. Discover the best and latest NFT collectibles on NEAR."
@@ -183,7 +183,7 @@ const MarketPage = ({ serverQuery }) => {
 			<div className="max-w-6xl relative m-auto py-12">
 				<div className="grid grid-cols-3 mb-4">
 					<h1 className="col-start-1 md:col-start-2 col-span-2 md:col-span-1 pl-5 md:pl-0 text-4xl font-bold text-gray-100 text-left md:text-center">
-						{localeLn('Market')}
+						{'Pasar'}
 					</h1>
 					<div className="flex items-center justify-end">
 						<div className="grid justify-items-end">
