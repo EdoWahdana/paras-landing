@@ -65,7 +65,7 @@ const HomeCollectionList = ({ showDetails }) => {
 
 	return (
 		<div className="mb-8 relative">
-			<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi Terfitur</h1>
+			<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi Terfitur BAGUS</h1>
 			<div
 				ref={ref}
 				className="flex flex-nowrap overflow-scroll snap-x -mx-3 disable-scrollbars"
