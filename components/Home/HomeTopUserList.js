@@ -165,7 +165,7 @@ export const HomeTopUserList = ({
 	const topUserTitle = (currentType) => {
 		switch (currentType) {
 			case 'top-collections':
-				return localeLn('TopCollections')
+				return 'Koleksi Teratas'
 			case 'top-buyers':
 				localeLn('TopBuyers')
 				return localeLn('TopBuyers')
@@ -197,7 +197,7 @@ export const HomeTopUserList = ({
 									`}
 									onClick={() => onClickType('top-collections')}
 								>
-									{localeLn('TopCollections')}
+									{'Koleksi Teratas'}
 								</p>
 								<p
 									className={`opacity-50 cursor-pointer select-none my-1
