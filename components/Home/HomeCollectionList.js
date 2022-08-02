@@ -50,7 +50,7 @@ const HomeCollectionList = ({ showDetails }) => {
 	if (!data && isValidating) {
 		return (
 			<div className="my-8 relative">
-				<h1 className="text-white font-semibold text-3xl capitalize mb-4">Featured Collections</h1>
+				<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi Terfitur</h1>
 				<div className="md:-mx-3">
 					<div className="hidden md:block">
 						<CollectionListLoader uniqueKey="big-collection-loader" contentLength={3} />
