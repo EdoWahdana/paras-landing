@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "COMMIT_MESSAGE: $NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE"
+echo "COMMIT_MESSAGE: $VERCEL_GIT_COMMIT_MESSAGE"
 
-if [[ "$NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE" == *"vercel-deploy"* ]]; then
+if [[ "$VERCEL_GIT_COMMIT_MESSAGE" == *"vercel-deploy"* ]]; then
   echo "Build can proceed"
   exit 1;
 
