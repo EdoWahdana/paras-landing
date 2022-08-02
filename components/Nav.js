@@ -490,7 +490,7 @@ const Nav = () => {
 									className="p-4 block w-full"
 									rel="noreferrer"
 								>
-									DYOR
+									dior
 								</a>
 							</div>
 						</div>
