@@ -1,6 +1,6 @@
 steps:
   - id: 'get gke credential'
-    name: 'google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e'
+    name: 'gcr.io/${PROJECT_ID}/deployment-previews' # our custom builder
     secretEnv: ['GKE_SA_KEY', 'GKE_CLUSTER', 'GKE_ZONE']
     args:
       [
@@ -14,12 +14,12 @@ steps:
       ]
 
   - id: 'set permission kubectl'
-    name: 'ubuntu'
+    name: 'gcr.io/${PROJECT_ID}/deployment-previews' # our custom builder
     entrypoint: 'bash'
     args: ['chmod', 'u+x', './kubectl']
 
   - id: 'get env from configmap'
-    name: ubuntu
+    name: 'gcr.io/${PROJECT_ID}/deployment-previews' # our custom builder
     entrypoint: 'bash'
     args:
       [
