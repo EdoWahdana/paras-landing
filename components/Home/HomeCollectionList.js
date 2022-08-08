@@ -50,7 +50,7 @@ const HomeCollectionList = ({ showDetails }) => {
 	if (!data && isValidating) {
 		return (
 			<div className="my-8 relative">
-				<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi Featured</h1>
+				<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi</h1>
 				<div className="md:-mx-3">
 					<div className="hidden md:block">
 						<CollectionListLoader uniqueKey="big-collection-loader" contentLength={3} />
@@ -65,7 +65,7 @@ const HomeCollectionList = ({ showDetails }) => {
 
 	return (
 		<div className="mb-8 relative">
-			<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi Featured</h1>
+			<h1 className="text-white font-semibold text-3xl capitalize mb-4">Koleksi</h1>
 			<div
 				ref={ref}
 				className="flex flex-nowrap overflow-scroll snap-x -mx-3 disable-scrollbars"
