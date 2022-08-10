@@ -1,7 +1,21 @@
 steps:
+  - id: 'get env from configmap'
+    name: 'gcr.io/cloud-builders/kubectl'
+    entrypoint: sh
+    args:
+      - '-c'
+      - |
+        gcloud container clusters get-credentials $$CLOUDSDK_CONTAINER_CLUSTER --zone $$CLOUDSDK_COMPUTE_ZONE --project $PROJECT_ID
+        kubectl get configmap "config-${_GKE_NAMESPACE}-${_GKE_DEPLOYMENT_NAME}" -n ${_GKE_NAMESPACE} -o go-template='{{range $k,$v := .data}}{{printf "%s=" $k}}{{if not $v}}{{$v}}{{else}}{{$v}}{{end}}{{"\n"}}{{end}}' > .env.temp
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=asia-southeast1-a'
+      - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-testnet'
+
   - id: 'build image'
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}:${_PR_NUMBER}-${SHORT_SHA}', '.']
+    timeout: '1600s'
 
   - id: 'push image'
     name: 'gcr.io/cloud-builders/docker'
@@ -19,6 +33,7 @@ steps:
         'managed',
         '--region',
         '${_REGION}',
+        '--allow-unauthenticated',
         '--image',
         'gcr.io/${PROJECT_ID}/${_SERVICE_NAME}:${_PR_NUMBER}-${SHORT_SHA}',
         '--tag',
@@ -45,6 +60,8 @@ steps:
         '--commit-sha',
         '${SHORT_SHA}',
       ]
+
+timeout: 1600s
 
 substitutions:
   _SERVICE_NAME: myservice
